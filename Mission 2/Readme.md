@@ -86,10 +86,10 @@ This application allows users to track their salary, manage expenses, and view t
 
 ## How to Run the Project
 
-1. Clone the repository
+1. Download or clone the repository
 
 ```bash
-git clone https://github.com/your-username/budget-tracker.git
+https://github.com/vaishnavisingh20/Prodesk-Missions
 ```
 2. Open the project folder
 
