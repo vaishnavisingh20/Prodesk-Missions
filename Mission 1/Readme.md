@@ -59,10 +59,10 @@ Note: There is no Prompts.md because no LLM was used
 
 ## How to Run the Project
 
-1. Clone the repository
+1. Download or clone the repository
 
 ```bash
-git clone https://github.com/your-username/digital-agency-portfolio.git
+https://github.com/vaishnavisingh20/Prodesk-Missions
 ```
 2. Open the project folder
 
