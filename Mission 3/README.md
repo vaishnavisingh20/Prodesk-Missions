@@ -31,3 +31,7 @@ git clone https://github.com/yourusername/dev-detective.git
 - The profile and repositories will appear
 - Enable Battle mode to compare two developers
 ---
+
+## Screenshots
+<img width="1630" height="855" alt="image" src="https://github.com/user-attachments/assets/f229f0ea-3a85-48a7-9fbe-db08c1ac49c9" />
+
