@@ -15,7 +15,7 @@ It uses the GitHub REST API to fetch real-time data and display it in a clean, r
 - styles.css
 - script.js
 - README.md
-  
+  Note: No Prompts.md is there
 ---
 ## How to run the project
 - Step 1: Clone the repository
