@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Detective: GitHub Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Dev Detective</h1>
+    <p class="subtitle">Fetch data, analyze profiles, and find the winner.</p>
+
+    <!-- Level 3: Battle Mode Toggle -->
+    <div class="battle-toggle">
+        <span>🥊 Battle Mode</span>
+        <input type="checkbox" id="battleToggle">
+    </div>
+
+    <!-- Level 1: Search Bar -->
+    <div class="controls">
+        <input type="text" id="usernameInput" placeholder="Enter GitHub Username (e.g. octocat)">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading-spinner hidden"></div>
+    <div id="error" class="error-msg hidden"></div>
+
+    <!-- Display Area -->
+    <div class="container">
+        <!-- User 1 Card -->
+        <div id="card1" class="user-card hidden">
+            <div class="user-info">
+                <img src="" alt="Avatar" class="avatar" id="avatar1">
+                <h2 id="name1">Name</h2>
+                <p id="bio1">Bio goes here...</p>
+                <p>📅 Joined: <span id="joined1"></span></p>
+                <p>🔗 <a href="#" target="_blank" id="website1">Portfolio</a></p>
+            </div>
+            <!-- Level 2: Repos -->
+            <div class="repos-section">
+                <h3>Top 5 Repositories</h3>
+                <ul class="repo-list" id="repos1">
+                    <!-- JS will populate this -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- User 2 Card (Level 3) -->
+        <div id="card2" class="user-card hidden">
+            <div class="battle-badge">VS</div>
+            <div class="user-info">
+                <img src="" alt="Avatar" class="avatar" id="avatar2">
+                <h2 id="name2">Name</h2>
+                <p id="bio2">Bio goes here...</p>
+                <p>📅 Joined: <span id="joined2"></span></p>
+                <p>🔗 <a href="#" target="_blank" id="website2">Portfolio</a></p>
+            </div>
+            <div class="repos-section">
+                <h3>Top 5 Repositories</h3>
+                <ul class="repo-list" id="repos2">
+                    <!-- JS will populate this -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
