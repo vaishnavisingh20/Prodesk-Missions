@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Digital Agency Portfolio</title>
+    <style>
+        
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --nav-bg: #ffffff;
+            --accent-color: #3b82f6; 
+            --accent-hover: #2563eb;
+            --card-bg: #f3f4f6;
+            --card-text: #1f2937;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode {
+            --bg-color: #111827;
+            --text-color: #f3f4f6;
+            --nav-bg: #1f2937;
+            --accent-color: #60a5fa;
+            --accent-hover: #93c5fd;
+            --card-bg: #374151;
+            --card-text: #f9fafb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: var(--nav-bg);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--text-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        
+        .services {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--card-text);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px); /* Lift effect */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .butt{
+            padding: 10px 20px; 
+            background-color: var(--accent-color); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px;                 
+            font-weight: bold;
+        }
+
+        .butt:hover{
+            background-color: white;
+            color: #2563eb;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--nav-bg);
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icons i {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .social-icons i:hover {
+            color: #007bff;
+        }
+
+        .navbar {
+            position: sticky; 
+            top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: var(--nav-bg);
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex; 
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">DigitalAgency</div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            
+            <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+            <div class="hamburger" id="hamburger">☰</div>
+        </div>
+    </nav>
+
+    
+    <section class="hero" id="home">
+        <h1>We Build Digital Experiences</h1>
+        <p>Transforming your ideas into powerful, responsive, and beautiful websites.</p>
+        
+        <a href="#contact" class="butt" id="butt">
+            Get Started
+        </a>
+    </section>
+
+    
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Custom websites built with clean code and modern technologies tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO Optimization</h3>
+                <p>Rank higher on search engines and drive organic traffic to your business.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Marketing</h3>
+                <p>Strategic campaigns to grow your brand and engage your target audience.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact">
+        <p>&copy; 2023 DigitalAgency. All rights reserved.</p>
+        <div class="social-icons">
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+    </footer>
+
+    
+    <script>
+        
+        const toggleBtn = document.getElementById('themeToggle');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            
+            if (body.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                toggleBtn.textContent = '🌙 Dark Mode';
+            }
+        });
+
+        
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
